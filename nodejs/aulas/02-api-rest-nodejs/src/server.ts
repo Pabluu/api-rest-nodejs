@@ -1,12 +1,13 @@
-interface User {
-  birthYear: number; // propriedade obrigatório
-  // birthYear?: number; // propriedade opcional
-}
+import fastify from "fastify";
 
-function calcularIdadeUsuario(user: User) {
-  return new Date().getFullYear() - user.birthYear;
-}
+const app = fastify();
 
-calcularIdadeUsuario({
-  birthYear: 12,
+app.get("/hello", () => {
+  return "Hello Man";
 });
+
+app.listen({ port: 3333 })
+.then(() => {
+  console.log('HTTP Server Running!')
+  app.close()
+})
