@@ -11,5 +11,4 @@ app.get('/hello', async () => {
 
 app.listen({ port: 3333 }).then(() => {
   console.log('http://localhost:3333/')
-  app.close()
 })
